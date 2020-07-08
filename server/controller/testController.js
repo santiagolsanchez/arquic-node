@@ -1,9 +1,8 @@
-const workflowManager = require('../services/testService');
+const { startService } = require('../services/testService');
 
-exports.start = (req, res, next) =>
-    workflowManager
-    .startExecution()
-    .then(info => {
-        res.status(200).send({ info });
-    })
-    .catch(next);
+const startController = async(req, res, next) => {
+    const test = await startService();
+    res.send(test);
+};
+
+module.exports = { startController };

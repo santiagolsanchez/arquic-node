@@ -1,6 +1,11 @@
 const errorHandler = require('./errorHandler');
 
-exports.startExecution = () =>
-    new Promise((res, err) => {
-        res({ ok: true });
-    }).catch(errorHandler.defaultErrorMessage);
+const startService = () => {
+    return new Promise((res, rej) => {
+        res({
+            ok: true
+        });
+    });
+};
+
+module.exports = { startService };

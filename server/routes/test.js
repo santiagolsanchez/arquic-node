@@ -3,6 +3,6 @@ const express = require('express'),
 
 const app = express();
 
-app.get('/test', workflowController.start);
+app.post('/test', workflowController.startController);
 
 module.exports = app;
